@@ -1,0 +1,33 @@
+\ProvidesFile{Font_set.tex}[2023]
+
+\setmainfont{Times New Roman}
+
+\setCJKmainfont[
+    Path=configuration/
+    ]{simsun.ttf}
+    
+\setCJKsansfont[
+    Path=configuration/
+    ]{simhei.ttf}
+
+\setCJKmonofont[
+    Path=configuration/
+    ]{simsun.ttf}
+
+\setCJKfamilyfont{song}[
+    Path=configuration/
+    ]{simsun.ttf}
+
+\setCJKfamilyfont{kai}[
+    Path=configuration/
+    ]{simkai.ttf}
+    
+\setCJKfamilyfont{hei}[
+    Path=configuration/,
+    BoldFont=FandolHei-Bold.otf,
+    ItalicFont=simhei.ttf
+    ]{simhei.ttf}
+
+\newcommand\kaishu{\CJKfamily{kai}}
+\newcommand\songti{\CJKfamily{song}}
+\newcommand\heiti{\CJKfamily{hei}}
