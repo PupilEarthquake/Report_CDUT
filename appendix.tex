@@ -1,0 +1,30 @@
+\chapter*{附录}
+\addcontentsline{toc}{chapter}{附录}  %手动添加为目录
+
+\section*{主要代码}
+\begin{spacing}{1.0}
+\begin{lstlisting}
+class Solve:
+    def SolveShape(self, a, b, c, l1=200, l2=100):
+        u = np.linspace(0, 2*np.pi, l1)
+        v = np.linspace(0, np.pi, l2)
+        x = a * np.outer(np.cos(u), np.sin(v)).flatten()
+        y = b * np.outer(np.sin(u), np.sin(v)).flatten()
+        z = c * np.outer(np.ones_like(u), np.cos(v)).flatten()
+        points = np.vstack([x, y, z]).transpose()
+        return points
+
+    def F(self, X, a, b, c, M):
+        I_1 = b**2 + c**2
+        I_2 = a**2 + c**2
+        I_3 = a**2 + b**2
+        I_a = 0.5*(1.0/I_1 + 1.0/I_2)
+        I_b = 0.5*(1.0/I_1 - 1.0/I_2)
+        phi, theta, psi = X[0], X[1], X[2]
+        dphi = M*(I_a - I_b * np.cos(2*psi))
+        # print(M, I_b, np.sin(theta), np.sin(2*psi))
+        dtheta = M*I_b*np.sin(theta)*np.sin(2*psi)
+        dpsi = np.cos(theta)*(M/I_3 - dphi)
+        return np.array([dphi, dtheta, dpsi])
+\end{lstlisting}
+\end{spacing}
