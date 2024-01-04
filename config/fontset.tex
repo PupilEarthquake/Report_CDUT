@@ -1,0 +1,53 @@
+\ProvidesFile{fontset.tex}[2023]
+
+% Fandol系列字体仓库地址: https://github.com/Yixf-Self/fandol-font
+
+\setCJKmainfont[
+    Path=config/,
+    BoldFont=FandolSong-Bold.otf,
+    ItalicFont=FandolKai-Regular.otf
+    ]{FandolSong-Regular.otf}
+    
+\setCJKsansfont[
+    Path=config/,
+    BoldFont=FandolHei-Bold.otf
+    ]{FandolHei-Regular.otf}
+
+\setCJKmonofont[
+    Path=config/,
+    BoldFont=FandolHei-Bold.otf,
+    ]{FandolHei-Regular.otf}
+
+\setCJKfamilyfont{song}[
+    Path=config/,
+    BoldFont=FandolSong-Bold.otf,
+    ItalicFont=FandolKai-Regular.otf
+    ]{FandolSong-Regular.otf}
+
+\setCJKfamilyfont{kai}[
+    Path=config/,
+    BoldFont=FandolKai-Regular.otf,
+    ItalicFont=FandolKai-Regular.otf
+]{FandolKai-Regular.otf}
+
+\setCJKfamilyfont{hei}[
+    Path=config/,
+    BoldFont=FandolHei-Bold.otf,
+    ItalicFont=FandolHei-Regular.otf
+]{FandolHei-Regular.otf}
+
+% \setCJKfamilyfont{simheifont}[
+%     Path=config/,
+%     BoldFont=FandolHei-Bold.otf,
+%     ItalicFont=FandolHei-Regular.otf
+% ]{simhei.ttf}
+% \newcommand\simhei{\CJKfamily{simheifont}}
+
+% 说明: 为了避免侵权, 最近一次更新删去了simhei等字体, 如果您的输入中含有生僻字, 且Fondol系列字体中无法正常显示, 可以做如下尝试:
+% 1) 下载或从系统中复制其他字体(如simhei), 上传到config文件夹中.
+% 2) 仿照上方注释掉的代码. 自己定义一个字体.
+
+\newcommand\kaishu{\CJKfamily{kai}}
+\newcommand\songti{\CJKfamily{song}}
+\newcommand\heiti{\CJKfamily{hei}}
+

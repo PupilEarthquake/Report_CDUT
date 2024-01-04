@@ -1,0 +1,18 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Mycommand}[2023]
+
+\newenvironment{cnabstract}  % 中文摘要环境
+    {
+        \begin{center}
+            \heiti\Large{摘要}
+        \end{center}
+        \normalsize\songti
+        \par\vskip 2.5ex
+    }{\par\vskip 2.5ex}
+
+\newcommand\dlmu[2][4cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}  % 用于绘制封面横线
+
+\newcommand{\pp}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\dl}{\mathop{}\!\mathrm{d}}
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\e}{\boldsymbol{e}}
